@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+    <!--<script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-firestore.js"></script>-->
     <script>
         // Initialize Firebase
         var config = {
@@ -24,7 +25,6 @@
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
 
 </head>
@@ -42,7 +42,7 @@
                     <ul class="right hide-on-med-and-down" id="navList">
                         <li><a href="#home">Home</a></li>
                         <li><a href="#mood">Mood Tracker</a></li>
-                        <li><a href="#playlist">About</a></li>
+                        <li><a href="#about">About</a></li>
                         <!--<li><a href="#signin" data-target='login'>Account</a></li> -->
                         <li id="auth-dropdown-holder">
                             <a id="auth-dropdown-button" class='dropdown-trigger' href='#' data-target='dropdown1'>
@@ -77,17 +77,30 @@
 
     <div id="mood" class="section black">
         <h1>Mood Tracker</h1>
-        <section class="mood" role="listbox">
-            <a class="#" role="option">sad<img src="https://emojipedia-us.s3.amazonaws.com/thumbs/144/google/3/crying-face_1f622.png"></a>
-            <a class="#" role="option">angry<img src="https://emojipedia-us.s3.amazonaws.com/thumbs/144/google/3/pensive-face_1f614.png"></a>
-            <a class="#" role="option">annoyed<img src="https://emojipedia-us.s3.amazonaws.com/thumbs/144/google/3/face-with-stuck-out-tongue_1f61b.png"></a>
-            <a class="#" role="option">neutral<img src="https://emojipedia-us.s3.amazonaws.com/thumbs/144/google/3/neutral-face_1f610.png"></a>
-            <a class="#" role="option">happy<img src="https://emojipedia-us.s3.amazonaws.com/thumbs/144/google/3/smiling-face-with-open-mouth_1f603.png"></a>
-            <a class="#" role="option">calm<img src="https://emojipedia-us.s3.amazonaws.com/thumbs/144/google/3/smiling-face-with-smiling-eyes_1f60a.png"></a>
+        <section  class="mood" role="listbox">
+            <a class="sad" role="option">sad<img src="https://emojipedia-us.s3.amazonaws.com/thumbs/144/google/3/crying-face_1f622.png"></a>
+            <a class="angry" role="option">angry<img src="https://emojipedia-us.s3.amazonaws.com/thumbs/144/google/3/pensive-face_1f614.png"></a>
+            <a class="annoyed" role="option">annoyed<img src="https://emojipedia-us.s3.amazonaws.com/thumbs/144/google/3/face-with-stuck-out-tongue_1f61b.png"></a>
+            <a class="neutral" role="option">neutral<img src="https://emojipedia-us.s3.amazonaws.com/thumbs/144/google/3/neutral-face_1f610.png"></a>
+            <a class="happy" role="option">happy<img src="https://emojipedia-us.s3.amazonaws.com/thumbs/144/google/3/smiling-face-with-open-mouth_1f603.png"></a>
+            <a class="calm" role="option">calm<img src="https://emojipedia-us.s3.amazonaws.com/thumbs/144/google/3/smiling-face-with-smiling-eyes_1f60a.png"></a>
         </section>
 
-        <section class="pain" role="listbox">
-            <a class="#" role="option">1</a>
+        <section class="intensity" role="listbox">
+            <a class="i1" role="option">1</a>
+            <a class="i2" role="option">2</a>
+            <a class="i3" role="option">3</a>
+            <a class="i4" role="option">4</a>
+            <a class="i5" role="option">5</a>
+            <a class="i6" role="option">6</a>
+            <a class="i7" role="option">7</a>
+            <a class="i8" role="option">8</a>
+            <a class="i9" role="option">9</a>
+            <a class="i10" role="option">10</a>
+        </section>
+
+        <section  class="energy" role="listbox">
+            <a id = "e1" class="#" role="option">1</a>
             <a class="#" role="option">2</a>
             <a class="#" role="option">3</a>
             <a class="#" role="option">4</a>
@@ -95,11 +108,10 @@
             <a class="#" role="option">6</a>
             <a class="#" role="option">7</a>
             <a class="#" role="option">8</a>
-            <a class="#" role="option">9</a>
-            <a class="#" role="option">10</a>
         </section>
 
-        <section class="energy" role="listbox">
+        <section  class="intoxication" role="listbox">
+            <a class="#" role="option">0</a>
             <a class="#" role="option">1</a>
             <a class="#" role="option">2</a>
             <a class="#" role="option">3</a>
@@ -107,70 +119,63 @@
             <a class="#" role="option">5</a>
             <a class="#" role="option">6</a>
             <a class="#" role="option">7</a>
-            <a class="#" role="option">8</a>
-        </section>
-
-        <section class="intoxication" role="listbox">
-            <a class="#" role="option">1</a>
-            <a class="#" role="option">2</a>
-            <a class="#" role="option">3</a>
-            <a class="#" role="option">4</a>
-            <a class="#" role="option">5</a>
-            <a class="#" role="option">6</a>
-            <a class="#" role="option">7</a>
-            <a class="#" role="option">8</a>
         </section>
         <p class="info"></p>
 
-        <a href="#" class="submit button">Save</a>
-        <textarea id="mood-note" type="text" class="note" placeholder="any notes?">any notes? </textarea>
+        <a href="#!" id="submit_button" class="submit button">Save</a>
+        <textarea id="mood-note" type="text" class="note" placeholder="Write a note here."></textarea>
 
-
-        <article class="history"></article>
+        <article  class="history">
+            <ul id="history">
+                
+            </ul>
+        </article>
 
         <div class="alert" role="alert">
             <p>You're not done yet! Make sure to enter how you're feeling in all of the categories.</p>
             <p><a class="button" href="#">Ok</a></p>
         </div>
     </div>
-
+    
     <!--Parallax-->
     <div id="p1" class="parallax-container">
         <div class="parallax">
             <img src="https://images.8tracks.com/cover/i/008/708/314/Girl-Sitting-In-Sunset-Hd-Wallpaper-1928.jpg?rect=299,0,768,768&q=98&fm=jpg&fit=max">
-
         </div>
         <div class="container">
             <div class="row">
                 <div class="col s12 center white-text">
-                    <h1><b>QUOTE</b></h1>
-                    <h4>"Music gives a soul to the universe, wings to the mind, flight to the imagination and life to everything."<br/> - Plato
-                    </h4>
+                    <blockquote cite="Plato">Music gives a soul to the universe, wings to the mind, flight to the imagination and life to everything.<br /> - Plato
+                    </blockquote>
                 </div>
             </div>
         </div>
-
     </div>
-
-    <!--Playlist -->
-    <div class="section">
-        <div class="container inline-stuff">
-            <div id="playlist">
-
+    
+    <!--Playlist-->
+    <div class="section" id="playlistStuff">
+        <h1 id="ptitle">Playlist</h1>
+        <div class="container inline-stuff" id=stuff>
+            <div class="row2 container center">
+                
             </div>
-            <div id="chat" class="invisible">
+            <div id="playlist">
+            
+            </div>
+            <div id="chat">
 
             </div>
 
         </div>
     </div>
-
+    
+    
     <!-- About -->
 
     <div class="section" style="background-color: #101010;" id="about">
         <div class="container">
             <h3 class="header text_b center">About </h3>
-            <h6>Motto gives you the opportunity to express and document your feelings. Motto takes venting to the next step by connecting you to a personalized playlist, a journal, a chat room, and ultimately makes finding a therapist a breeze</h6>
+            <h6>Motto gives you the opportunity to express and document your feelings. Motto takes venting to the next level by connecting you to a personalized playlist, a journal, a chat room, and ultimately makes finding a therapist a breeze.</h6>
             <div class="row ">
                 <div class="col s12 m12 l4">
                     <div class="card black">
@@ -179,7 +184,7 @@
                         </div>
                         <div class="card-content">
                             <span class="card-title activator purple-text text-lighten-5">Kamrul Hossain <i class="mdi-navigation-more-vert material-icons right">more_vert</i></span>
-                            <p><a class="purple-text text-lighten-5" href="#">Web Developer</a></p>
+                            <p><a class="purple-text text-lighten-5" href="#">Chief Technology Officer (CTO)</a></p>
                         </div>
                         <div class="card-reveal  black">
                             <span class="card-title purple-text text-lighten-5">OppNet Class of '21 <i class="mdi-navigation-close right"></i></span>
@@ -196,12 +201,12 @@
                         </div>
                         <div class="card-content">
                             <span class="card-title activator purple-text text-lighten-5">Amori Richards <i class="mdi-navigation-more-vert material-icons right">more_vert</i></span>
-                            <p><a class="purple-text text-lighten-5" href="#">Web Developer</a></p>
+                            <p><a class="purple-text text-lighten-5" href="#">Chief Operating Officer (COO)</a></p>
                         </div>
                         <div class="card-reveal  black">
                             <span class="card-title purple-text text-lighten-5">OppNet Class of '20<i class="mdi-navigation-more-vert material-icons right">more_vert</i></span>
                             <p>Major:Computer Information Systems </p>
-                            <p>Top 5 Artist: Smino, Brock Hampton, Kid Cudi, Jaden Smith, Nujbes </p>
+                            <p>Top 5 Artists:  Smino, Brockhampton, Masego, Earl Sweatshirt, Nujbes </p>
                             <p>Instagram: nu.sabi</p>
                         </div>
                     </div>
@@ -218,7 +223,7 @@
                         <div class="card-reveal  black">
                             <span class="card-title purple-text text-lighten-5">OppNet Class of '20<i class="mdi-navigation-close right"></i></span>
                             <p>Major: Globalization</p>
-                            <p>Top 5 Artist: The Internet, Kendrick Lamar, Calle 13, Kail Uchis, Ariana Grande</p>
+                            <p>Top 5 Artists: The Internet, Kendrick Lamar, Calle 13, Kail Uchis, Ariana Grande</p>
                             <p>Instagram: wise.latina </p>
                         </div>
                     </div>

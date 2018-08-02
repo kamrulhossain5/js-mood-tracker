@@ -2,6 +2,8 @@
 //service in firebase
 const auth = firebase.auth()
 const database = firebase.firestore()
+  const settings = {/* your settings... */ timestampsInSnapshots: true};
+  database.settings(settings);
 
 // Using a popup.
 const provider = new firebase.auth.GoogleAuthProvider()
@@ -20,7 +22,9 @@ function initializeApp()
     if(user)
     {
       const avatarSrc = user.photoURL
+      const id = user.uid
       updateUIforSignIn(avatarSrc)
+      getUsersMoodData(id)
     }else{
       updateUIforSignOut()
     }
@@ -75,20 +79,87 @@ function signOutWithGoogle() {
     
 }
 
-function getUsersFriends() {
-  console.log('getting the users friends')
-  const user = auth.currentUser
-  const userId = user.uid
-  
-  const query = database.collection('users')
-  .get()
-  .then( snapshot => {
-    if (snapshot.size) {
-      snapshot.forEach( doc => {
-        let userInfo = doc.data()
-        
-        updateUIwithNewContact(userInfo)
-      })
+
+function submitMood() {
+    var mood = feels.mood
+    var intensity = feels.intensity 
+    var energy = feels.energy 
+    var intoxication = feels.intoxication
+    var moodNote = document.querySelector('#mood-note').value
+
+    var currentUser = firebase.auth().currentUser
+
+    if (!currentUser) {
+        alert('Log in to save your mood!')
+        //chat.classList.add('invisible')
+        return
     }
-  })
+
+    var uid = currentUser.uid
+    var newMoodRef = firebase.firestore().collection('moods').doc()
+    newMoodRef.set({
+        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+        userId: uid,
+        mood: mood,
+        energy, energy,
+        intoxication: intoxication,
+        intensity: intensity,
+        note: moodNote
+    })
+    .then( res => {
+      console.log(res)
+      console.log('success!')
+      displayPlaylist(mood, energy, intoxication, intensity, moodNote)
+    })
+    .catch( err => console.log(err))
+
+    document.querySelector('#mood-note').value = ''
+
+    loadUserMoods()
 }
+
+function getUsersMoodData(uid){
+  database.collection('moods')
+    .where('userId', '==', uid)
+    .orderBy('timestamp', 'asc')
+    .get()
+    .then(function(querySnapshot) {
+        var resultingHTML = ''
+        querySnapshot.forEach(function(doc) {
+            var data = doc.data()
+            let formattedDate = data.timestamp.toDate()
+              .toString()
+              .split(" ")
+              .splice(0, 5)
+              .join(" ")
+            resultingHTML += `<li>Mood: ${data.mood} - Intensity: ${data.intensity} - Energy: ${data.energy} - Intoxication: ${data.intoxication} - ${formattedDate} ${data.note ? '- Note: '+data.note : ''}</li>`
+        })
+        document.querySelector('#history').innerHTML = resultingHTML
+    })  
+}
+
+function loadUserMoods() {
+    var currentUser = firebase.auth().currentUser
+    if (!currentUser) {
+        alert('No Current User')
+
+        return
+    }
+
+    var uid = currentUser.uid
+
+    firebase.firestore().collection('moods')
+        .where('userId', '==', uid)
+        .orderBy('timestamp')
+        .get()
+        .then(function(querySnapshot) {
+            var resultingHTML = ''
+            querySnapshot.forEach(function(doc) {
+                var data = doc.data()
+                resultingHTML += `<li>${data.timestamp} - ${data.mood} - ${data.note}</li>`
+            })
+            document.getElementById('dashboard-table').innerHTML = resultingHTML
+        })
+}
+
+

@@ -1,117 +1,209 @@
-/* ===== MAIN.CSS goes here ===== */
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 @import url('https://fonts.googleapis.com/css?family=Comfortaa');
-body{
-    background-color: black;
-    color: rgba(255,255,255,0.8);
-     font-family: 'Comfortaa', cursive;
-     font-weight: 400;
-    font-size: 20px;
+body {
+  background-color: black;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: 'Comfortaa', cursive;
+  font-weight: 500;
+  font-size: 20px;
 }
 
 #home {
-    height: 100vh;
-    background: url('https://cdn.suwalls.com/wallpapers/photography/listening-to-music-at-sunset-46733-1920x1200.jpg') !important;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    z-index: -1;
-     font-family: 'Comfortaa', cursive;
-    font-size: 50px;
-    font-weight: 700;
+  height: 100vh;
+  background: url('https://cdn.suwalls.com/wallpapers/photography/listening-to-music-at-sunset-46733-1920x1200.jpg') !important;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: -1;
+  font-family: 'Comfortaa', cursive;
+  font-size: 50px;
+  font-weight: 700;
 }
 
-#mainText{
-    margin-top: 30vh;
-    font-family: 'Comfortaa', cursive;
-     font-weight: 400;
-        font-size: 20px;
+#mainText {
+  margin-top: 30vh;
+  font-family: 'Comfortaa', cursive;
+  font-weight: 400;
+  font-size: 20px;
 }
 
-#mood{
-    margin-top: 50px;
-    font-family: 'Comfortaa', cursive;
-    font-size: 23px;
-    font-weight: 700;
+#mood {
+  margin-top: 50px;
+  font-family: 'Comfortaa', cursive;
+  font-size: 23px;
+  font-weight: 700;
 }
 
-#playlist{
-    background-color: rgb(61,61,61);
-    margin-left: 90px;
-    margin-right: 90px;
+#mood-note {
+  justify-content: stretch;
+
+
 }
 
-#p1{
-    height: 350px;
+#stuff {
+  display: flex;
+  justify-content: space-around;
 }
 
-      
+/*#playlist{*/
+
+/*    background-color: rgb(61,61,61);*/
+
+/*    margin-left: 90px;*/
+
+/*    margin-right: 30px;*/
+
+/*    height:300px;*/
+
+/*}*/
+
+/*#chat {*/
+
+/*}*/
+
+#submit_button {}
+
+#p1 {
+  height: 350px;
+  font-family: 'Comfortaa', cursive;
+  font-weight: 400;
+  font-size: 20px;
+  padding-top: 60px;
+
+}
+
+#playlistStuff {
+  font-family: 'Comfortaa', cursive;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+#about {
+  font-family: 'Comfortaa', cursive;
+  font-weight: 400;
+  /*font-size: 20px;*/
+}
+
+.history {
+  width: 80%;
+  margin: 0 auto;
+}
+
+blockquote {
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+  color: white;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+blockquote p {
+  display: inline;
+}
+
+
 /*#happy:hover {*/
+
 /*    background-color: white;*/
+
 /*    cursor: pointer;*/
+
 /*    border-radius:50%;*/
+
 /*}*/
 
 /*#calm:hover {*/
+
 /*    background-color: white;*/
+
 /*    cursor: pointer;*/
+
 /*    border-radius:50%;*/
+
 /*}*/
 
 /*#neutral:hover {*/
+
 /*    background-color: white;*/
+
 /*    cursor: pointer;*/
+
 /*    border-radius:50%;*/
+
 /*}*/
 
 /*#annoyed:hover {*/
+
 /*    background-color: white;*/
+
 /*    cursor: pointer;*/
+
 /*    border-radius:50%;*/
+
 /*}*/
 
 /*#sad:hover {*/
+
 /*    background-color: white;*/
+
 /*    cursor: pointer;*/
+
 /*    border-radius:50%;*/
-/*}*/
-.inline-stuff {
-    display: flex;
-}
-#auth-dropdown-holder, #dropdown1 {
-    left: inherit !important;
-}
-/*@media only screen and (max-width: 1600px) and (min-width: 999px)  {*/
-/*    img.activator {*/
-        /*overflow-y: hidden;*/
-/*        max-height: 303.72;*/
-/*    }    */
+
 /*}*/
 
+.inline-stuff {
+  display: flex;
+}
+
+#auth-dropdown-holder,
+#dropdown1 {
+  left: inherit !important;
+}
+
+/*@media only screen and (max-width: 1600px) and (min-width: 999px)  {*/
+
+/*    img.activator {*/
+
+/*overflow-y: hidden;*/
+
+/*        max-height: 303.72;*/
+
+/*    }    */
+
+/*}*/
 
 #angry:hover {
-    background-color: white;
-    cursor: pointer;
-    border-radius:50%;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 50%;
 }
 
-.invisible{
-    visibility: hidden !important;
+.invisible {
+  visibility: hidden !important;
 }
 
 .avatar-image {
-    margin-top: 8px;
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
+  margin-top: 8px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
 }
 
 .dropdown-trigger:focus {
-    outline: none !important;
+  outline: none !important;
 }
 
-@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
-.title-before:before, section:before, article:before {
+.title-before:before,
+section:before,
+article:before {
   content: attr(class);
   position: absolute;
   left: 2px;
@@ -128,7 +220,7 @@ body{
 
 body {
   background: #222;
-  font-family: 'Montserrat',sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: #fff;
   /*padding: 4% 0;*/
   /*width: 80%;*/
@@ -143,6 +235,7 @@ section {
   display: flex;
   position: relative;
 }
+
 section a {
   display: flex;
   flex-grow: 1;
@@ -153,31 +246,40 @@ section a {
   padding: 0.5em;
   color: rgba(255, 255, 255, 0.2);
 }
+
 section a:hover {
   border-bottom-width: 0em;
 }
+
 section a.clicked {
   color: rgba(255, 255, 255, 0.8);
   flex-grow: 1.4;
 }
+
 section.mood a:nth-child(1) {
   background-color: #c6597f;
 }
+
 section.mood a:nth-child(2) {
   background-color: #b26a8b;
 }
+
 section.mood a:nth-child(3) {
   background-color: #9d7b96;
 }
+
 section.mood a:nth-child(4) {
   background-color: #898ca1;
 }
+
 section.mood a:nth-child(5) {
   background-color: #749dac;
 }
+
 section.mood a:nth-child(6) {
   background-color: #60aeb8;
 }
+
 section.mood a img {
   opacity: 0.9;
   margin: auto;
@@ -186,81 +288,107 @@ section.mood a img {
   position: relative;
   left: -0.2em;
 }
+
 section.energy a:nth-child(1) {
   background-color: #e8b54e;
 }
+
 section.energy a:nth-child(2) {
   background-color: #d1b650;
 }
+
 section.energy a:nth-child(3) {
   background-color: #bab853;
 }
+
 section.energy a:nth-child(4) {
   background-color: #a3b955;
 }
+
 section.energy a:nth-child(5) {
   background-color: #8dba57;
 }
+
 section.energy a:nth-child(6) {
   background-color: #76bb59;
 }
+
 section.energy a:nth-child(7) {
   background-color: #5fbd5c;
 }
+
 section.energy a:nth-child(8) {
   background-color: #48be5e;
 }
-section.pain a:nth-child(1) {
+
+section.intensity a:nth-child(1) {
   background-color: #571d43;
 }
-section.pain a:nth-child(2) {
+
+section.intensity a:nth-child(2) {
   background-color: #602043;
 }
-section.pain a:nth-child(3) {
+
+section.intensity a:nth-child(3) {
   background-color: #6a2442;
 }
-section.pain a:nth-child(4) {
+
+section.intensity a:nth-child(4) {
   background-color: #742841;
 }
-section.pain a:nth-child(5) {
+
+section.intensity a:nth-child(5) {
   background-color: #7e2b41;
 }
-section.pain a:nth-child(6) {
+
+section.intensity a:nth-child(6) {
   background-color: #872f40;
 }
-section.pain a:nth-child(7) {
+
+section.intensity a:nth-child(7) {
   background-color: #913240;
 }
-section.pain a:nth-child(8) {
+
+section.intensity a:nth-child(8) {
   background-color: #9b363f;
 }
-section.pain a:nth-child(9) {
+
+section.intensity a:nth-child(9) {
   background-color: #a53a3e;
 }
-section.pain a:nth-child(10) {
+
+section.intensity a:nth-child(10) {
   background-color: #ae3d3e;
 }
+
 section.intoxication a:nth-child(1) {
   background-color: #d9d4cc;
 }
+
 section.intoxication a:nth-child(2) {
   background-color: #d1d2cc;
 }
+
 section.intoxication a:nth-child(3) {
   background-color: #cacfcc;
 }
+
 section.intoxication a:nth-child(4) {
   background-color: #c2cccc;
 }
+
 section.intoxication a:nth-child(5) {
   background-color: #bbcacc;
 }
+
 section.intoxication a:nth-child(6) {
   background-color: #b3c7cc;
 }
+
 section.intoxication a:nth-child(7) {
   background-color: #acc4cc;
 }
+
 section.intoxication a:nth-child(8) {
   background-color: #a4c2cc;
 }
@@ -275,6 +403,7 @@ a.button {
   float: right;
   transition: all 100ms ease-in;
 }
+
 a.button:hover {
   color: rgba(255, 255, 255, 0.9);
   padding: 0.8em 2.5em;
@@ -283,7 +412,7 @@ a.button:hover {
 input {
   float: right;
   padding: 0.9em 1.2em 0.7em 1.2em;
-  font-family: 'Montserrat',sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 0.9em;
   border: none;
   margin-right: 2em;
@@ -291,6 +420,7 @@ input {
   transition: all 100ms ease-in;
   color: #222;
 }
+
 input:focus {
   outline: 0;
   border-left-width: 1em;
@@ -300,25 +430,32 @@ h1 {
   text-align: center;
   margin-top: 0;
 }
+
 h1 img {
   height: 1em;
 }
 
-.submit, input {
+.submit,
+input {
   margin-top: -2em;
 }
 
-.info, article {
+.info,
+article {
   margin-top: -1em;
   float: left;
   margin-bottom: 7em;
 }
-.info span, article span {
+
+.info span,
+article span {
   text-transform: uppercase;
   color: #555;
   font-weight: bold;
 }
-.info span.color, article span.color {
+
+.info span.color,
+article span.color {
   width: 2em;
   height: 0.8em;
   display: inline-block;
@@ -331,24 +468,29 @@ article {
   position: relative;
   padding: 4px;
 }
+
 article span {
   display: block;
   color: #aaa;
 }
+
 article span img {
   height: 1.1em;
   margin: 0 0.3em 0 0.5em;
   vertical-align: -2px;
 }
+
 article span.entry {
   margin-bottom: 1em;
 }
+
 article span.date {
   margin-bottom: 4px;
   color: #555;
   display: inline;
   float: right;
 }
+
 article span.notes {
   color: #555;
   display: inline;
@@ -365,19 +507,21 @@ div.alert {
   padding-bottom: 1em;
   transform: translateX(-50%);
 }
+
 div.alert p {
   display: block;
   text-align: center;
   margin: 2em;
   color: #eee;
 }
+
 div.alert a.button {
   float: none;
 }
 
 .note {
-    width: 80%;
-    margin: -110px 10% 0 10%;
+  width: 80%;
+  margin: -110px 10% 0 10%;
 }
 
 @media (max-width: 1050px) {
@@ -398,7 +542,8 @@ div.alert a.button {
     width: 80%;
   }
 
-  .info, article {
+  .info,
+  article {
     display: block;
     clear: both;
     margin-top: -1.5em;
@@ -409,7 +554,8 @@ div.alert a.button {
     clear: both;
   }
 
-  a.submit, .note {
+  a.submit,
+  .note {
     /*float: left;*/
     margin-right: 2em;
     margin-bottom: 5em;
@@ -422,6 +568,7 @@ div.alert a.button {
     display: block;
   }
 }
+
 @media (max-width: 800px) {
   section {
     min-height: 4em;
@@ -432,19 +579,24 @@ div.alert a.button {
     margin-top: 4px;
   }
 }
+
 @media (max-width: 600px) {
-  .info, article {
+  .info,
+  article {
     font-size: 0.8em;
   }
-  .info span.color, article span.color {
+  .info span.color,
+  article span.color {
     width: 0.8em;
     margin-right: 1em;
   }
 
-  a.submit, .note {
+  a.submit,
+  .note {
     font-size: 0.8em;
   }
 }
+
 body::-webkit-scrollbar {
   background: #222;
   width: 6px;
