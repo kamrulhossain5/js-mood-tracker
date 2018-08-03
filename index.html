@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
-    <!--<script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-firestore.js"></script>-->
     <script>
         // Initialize Firebase
         var config = {
@@ -42,7 +41,7 @@
                     <ul class="right hide-on-med-and-down" id="navList">
                         <li><a href="#home">Home</a></li>
                         <li><a href="#mood">Mood Tracker</a></li>
-                        <li><a href="#about">About</a></li>
+                        <li><a href="#about">Team</a></li>
                         <!--<li><a href="#signin" data-target='login'>Account</a></li> -->
                         <li id="auth-dropdown-holder">
                             <a id="auth-dropdown-button" class='dropdown-trigger' href='#' data-target='dropdown1'>
@@ -69,7 +68,7 @@
         <h1 style="margin-bottom: -50px" style="color: white;" class="center">
             <b>MOTTO</b>
         </h1>
-        <h5 id="mainText" class="center">Music, Journal, Chat, Chart, & Connect</h5>
+        <h5 id="mainText" class="center">Music, Organize, Text, Track, & Optimize</h5>
 
     </div>
 
@@ -121,10 +120,10 @@
             <a class="#" role="option">7</a>
         </section>
         <p class="info"></p>
-
+        
+        
+        <textarea id="mood-note" type="text" class="note" placeholder="Why are you feeling that way?"></textarea>
         <a href="#!" id="submit_button" class="submit button">Save</a>
-        <textarea id="mood-note" type="text" class="note" placeholder="Write a note here."></textarea>
-
         <article  class="history">
             <ul id="history">
                 
@@ -137,15 +136,12 @@
         </div>
     </div>
     
-    <!--Parallax-->
-    <div id="p1" class="parallax-container">
-        <div class="parallax">
-            <img src="https://images.8tracks.com/cover/i/008/708/314/Girl-Sitting-In-Sunset-Hd-Wallpaper-1928.jpg?rect=299,0,768,768&q=98&fm=jpg&fit=max">
-        </div>
+    <!--Quote-->
+    <div id="p1" class="quote-container">
         <div class="container">
             <div class="row">
                 <div class="col s12 center white-text">
-                    <blockquote cite="Plato">Music gives a soul to the universe, wings to the mind, flight to the imagination and life to everything.<br /> - Plato
+                    <blockquote cite="Plato">Music can change lives. Whether you are having a good or bad day, the power of music can change one's mood.<br /> - Jess Bowen
                     </blockquote>
                 </div>
             </div>
@@ -170,11 +166,11 @@
     </div>
     
     
-    <!-- About -->
+    <!-- Team -->
 
     <div class="section" style="background-color: #101010;" id="about">
         <div class="container">
-            <h3 class="header text_b center">About </h3>
+            <h3 class="header text_b center">Team</h3>
             <h6>Motto gives you the opportunity to express and document your feelings. Motto takes venting to the next level by connecting you to a personalized playlist, a journal, a chat room, and ultimately makes finding a therapist a breeze.</h6>
             <div class="row ">
                 <div class="col s12 m12 l4">
@@ -218,7 +214,7 @@
                         </div>
                         <div class="card-content">
                             <span class="card-title activator purple-text text-lighten-5">Lindsay Espaillat <i class="mdi-navigation-more-vert material-icons right">more_vert</i></span>
-                            <p><a class="purple-text text-lighten-5" href="#">Web Developer</a></p>
+                            <p><a class="purple-text text-lighten-5" href="#">Chief Executive Officer (CEO)</a></p>
                         </div>
                         <div class="card-reveal  black">
                             <span class="card-title purple-text text-lighten-5">OppNet Class of '20<i class="mdi-navigation-close right"></i></span>

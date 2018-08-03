@@ -91,7 +91,6 @@ function submitMood() {
 
     if (!currentUser) {
         alert('Log in to save your mood!')
-        //chat.classList.add('invisible')
         return
     }
 
@@ -132,7 +131,7 @@ function getUsersMoodData(uid){
               .split(" ")
               .splice(0, 5)
               .join(" ")
-            resultingHTML += `<li>Mood: ${data.mood} - Intensity: ${data.intensity} - Energy: ${data.energy} - Intoxication: ${data.intoxication} - ${formattedDate} ${data.note ? '- Note: '+data.note : ''}</li>`
+            resultingHTML += `<li>${formattedDate} &nbsp &nbsp Mood: ${data.mood} &nbsp &nbsp Intensity: ${data.intensity} &nbsp &nbsp Energy: ${data.energy} &nbsp &nbsp Intoxication: ${data.intoxication} ${data.note ? '&nbsp &nbsp Note: '+data.note : ''}</li>`
         })
         document.querySelector('#history').innerHTML = resultingHTML
     })  
